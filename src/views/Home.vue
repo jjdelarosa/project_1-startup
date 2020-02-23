@@ -15,29 +15,41 @@
         >
         A social network a place where you can share code and talk to one another and work together in projects and homework activities.
         As a community of coders, I feel we will connect them to solution that enable productivity, growth, and discovery to your code.
-        Are you A?
+        Are you?
         </h3>
         <div class="bg-white w-1/4 mx-4 mb-4 rounded-xl shadow p-4 text-black">
-        <div class="bg-white hover:bg-red-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
-        A coder
-        </div>
+          <div class="bg-white hover:bg-red-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
+          A Coder
+          </div>
                 <div class="bg-white hover:bg-green-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
-        A Student
-        </div>
+          A Student
+          </div>
                 <div class="bg-white hover:bg-purple-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
-        A Developer
-        </div>
+          A Developer
+          </div>
         </div>
       </div>
+              <coder />
+              <studnet />
+              <developer />
+              <signup />
   </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar'
+import coder from '../components/coder'
+import studnet from '../components/student'
+import developer from '../components/developer'
+import signup from '../components/signup'
 export default {
   name: 'Home',
   components: {
-    NavBar
+    NavBar,
+    coder,
+    studnet,
+    developer,
+    signup
   }
 }
 </script>
