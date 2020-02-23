@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-      <div class="h-screen w-screen bg-blue-600 opacity-75" />
+      <div class="pt-24 min-h-screen w-screen top flex flex-col flex-wrap justify-center items-center px-8 bg-blue-600 shadow-lg" />
       <div
         class="absolute h-screen w-screen top-0 flex flex-col justify-center items-center"
       >
@@ -14,10 +14,20 @@
           class="text-2xl font-bold text-white px-4 opacity-75"
         >
         A social network a place where you can share code and talk to one another and work together in projects and homework activities.
+        As a community of coders, I feel we will connect them to solution that enable productivity, growth, and discovery to your code.
+        Are you A?
         </h3>
-        <p  class="text-2xl font-bold text-white px-4 opacity-75">
-          As a community of coders, I feel we will connect them to solution that enable productivity, growth, and discovery to your code.
-          </p>
+        <div class="bg-white w-1/4 mx-4 mb-4 rounded-xl shadow p-4 text-black">
+        <div class="bg-white hover:bg-red-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
+        A coder
+        </div>
+                <div class="bg-white hover:bg-green-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
+        A Student
+        </div>
+                <div class="bg-white hover:bg-purple-500 w-1/8 mx-4 mb-4 rounded-xl shadow p-4 text-black">
+        A Developer
+        </div>
+        </div>
       </div>
   </div>
 </template>
