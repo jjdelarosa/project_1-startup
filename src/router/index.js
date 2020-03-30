@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Login from '../views/Login.vue'
+import Login from '../views/login.vue'
 import Public from '../views/Public.vue'
 import Private from '../views/Private.vue'
 import store from '../store'
@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login
   },
   {
