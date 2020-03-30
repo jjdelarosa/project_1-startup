@@ -1,33 +1,60 @@
 <template>
-   <nav
-   class="nav w-screen z-20 text-white shadow-2xl bg-blue-600"
-  >
-    <div class="left">
-        <span class="font-bold text-3xl ">
-            GroupCodingHub
-      </span>
-    </div>
-    <div class="right">
-      <router-link class="link" to="/">Home</router-link>|
-      <router-link class="link" to="/login">login</router-link>
-    </div>
+  <nav class="flex bg-red-500 h-20 px-8 justify-between items-center">
+    <div>
+      <router-link to="/" class="logo font-blod text-xl tracking tight"
+      >GroupCodingHub</router-link>
+      </div>
+      <div>
+        <span v-if="user" class="font-blod"
+        >Welcome <span class="font-normal">{{ user.displayName }}</span></span>
+         <router-link
+        v-if="!user"
+        class="p-2 mx-1 hover:text-red-900 hover:bg-red-300"
+        to="/login"
+        >Login</router-link
+      >
+      <button
+        v-if="user"
+        class="p-2 mx-1 hover:text-red-900 hover:bg-red-300"
+        @click="logOut"
+      >
+        Logout
+      </button>
+      <router-link
+        class="p-2 mx-1 hover:text-red-900 hover:bg-red-300"
+        to="/public"
+        >Public</router-link
+      >
+      <router-link
+        v-if="user"
+        class="p-2 mx-1 text-white hover:text-red-900 hover:bg-red-300"
+        to="/private"
+        >Private</router-link
+      >
+        </div>
   </nav>
 </template>
 
 <script>
 export default {
-    name: 'NavBar'
-}
+  name: "NavBar",
+    computed: {
+    user() {
+      return this.$store.getters.getUser
+    }
+  },
+  methods: {
+    logOut() {
+      this.$firebase.auth().signOut()
+      this.$store.dispatch('setUser', '')
+      this.$router.push('/')
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  @apply h-24 fixed px-12 flex justify-between items-center;
-}
-.link {
-  @apply px-2 font-semibold;
-  &:hover {
-    @apply text-red-500;
-  }
+  :not(.logo).router-link-exact-active {
+  @apply font-bold text-purple-900 bg-white;
 }
 </style>

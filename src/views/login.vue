@@ -1,29 +1,30 @@
 <template>
-  <div>
-    <NavBar />
-    <div
-      class="pt-24 min-h-screen w-screen top flex flex-col flex-wrap justify-center items-center px-8 bg-blue-600 shadow-lg"
-    >
-    <div class="bg-white w-1/4 mx-4 mb-4 rounded-xl shadow p-4 text-black">
-    <h1>Email</h1>
-    <input 
-    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email" />
-    <h1>Password</h1>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" placeholder="Password" />
-    <div class="flex items-center justify-btween py-2">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Login</button>
-    </div>
-    </div>
-  </div>
-  </div>
+  <div
+    id="firebaseui-auth-container"
+    class="flex justify-around px-4 py-2 m-2"
+  ></div>
 </template>
 
 <script>
-import NavBar from '../components/NavBar'
 export default {
   name: 'login',
-  components: {
-    NavBar
+  mounted() {
+    const uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: authResult => {
+          this.$store.dispatch('setUser', authResult.user)
+          this.$router.push('/')
+          return false
+        }
+      },
+      signInOptions: [
+        this.$firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        this.$firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        this.$firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        this.$firebase.auth.TwitterAuthProvider.PROVIDER_ID
+      ]
+    }
+    this.$firebaseui.start('#firebaseui-auth-container', uiConfig)
   }
 }
 </script>
