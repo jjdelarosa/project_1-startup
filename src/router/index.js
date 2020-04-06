@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/login.vue'
 import Public from '../views/Public.vue'
 import Private from '../views/Private.vue'
+import Create from '../views/Create.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -20,12 +21,17 @@ const routes = [
     component: Login
   },
   {
-    path: '/public',
+    path: '/news feed',
     name: 'Public',
     component: Public
   },
   {
-    path: '/private',
+    path: '/create',
+    name: 'Create',
+    component: Create
+  },
+  {
+    path: '/profile',
     name: 'Private',
     component: Private,
     meta: { requiresAuth: true }

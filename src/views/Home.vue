@@ -1,10 +1,7 @@
 <template>
   <div>
     <div
-      class="pt-24 min-h-screen w-screen top flex flex-col flex-wrap justify-center items-center px-8 bg-blue-600 shadow-lg"
-    />
-    <div
-      class="absolute h-screen w-screen top-0 flex flex-col justify-center items-center"
+      class=" h-screen w-screen top-0 flex flex-col justify-center items-center"
     >
       <h1 class="text-6xl font-bold text-white px-4 opacity-75">
         GroupCodingHub

@@ -8,13 +8,12 @@
       join the team of wonderful peopole who will help you code in your journey.
     </h3>
     <router-link to="/login">
-    <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      type="button"
-      
-    >
-      Sign Up
-    </button>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="button"
+      >
+        Sign Up
+      </button>
     </router-link>
   </div>
 </template>

@@ -1,6 +1,8 @@
-
 <template>
-  <div>
+  <div
+    class="h-screen w-screen bg-cover bg-center shadow-2xl"
+    :style="`background-image: url(${bgImage})`"
+  >
     <div
       class="flex flex-col items-center bg-white rounded-lg p6 w-1/3 mx-auto mt-8"
     >
@@ -18,11 +20,13 @@
 
 <script>
 import defaultPicture from '../assets/user.png'
+import bgImage from '../assets/bg.jpg'
 export default {
   name: 'Private',
   data() {
     return {
-      defaultPicture
+      defaultPicture,
+      bgImage
     }
   },
   computed: {

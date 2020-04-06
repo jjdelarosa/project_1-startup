@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen bg-blue-700">
     <NavBar />
     <router-view />
     <Footer />
